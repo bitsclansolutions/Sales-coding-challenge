@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  web:
+    image: '381491924814.dkr.ecr.us-east-2.amazonaws.com/recustom-services:{{IMAGE_TAG}}'
+    ports:
+      - '$PORT:$PORT'
+    environment:
+      - NODE_ENV
+      - PORT
+      - HASURA_NESTJS_WEBHOOK_SECRET_HEADER_VALUE
+      - AUTH0_DOMAIN
+      - AUTH0_CLIENT_ID
+      - AUTH0_CLIENT_SECRET
+      - HASURA_GRAPHQL_ENDPOINT
+      - HASURA_GRAPHQL_ADMIN_SECRET
+      - USER_WEBSITE_API_URL
+      - AUTO_MANAGE_HASURA_METADATA
